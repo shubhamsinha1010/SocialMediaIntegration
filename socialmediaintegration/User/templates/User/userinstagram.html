@@ -1,0 +1,165 @@
+<!--{% load static %}-->
+<!--<html lang="en">-->
+<!--  <head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+<!--    <title>Search YouTube</title>-->
+<!--    &lt;!&ndash; Bootstrap core CSS &ndash;&gt;-->
+<!--    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+<!--    <style>-->
+<!--      .bd-placeholder-img {-->
+<!--        font-size: 1.125rem;-->
+<!--        text-anchor: middle;-->
+<!--        -webkit-user-select: none;-->
+<!--        -moz-user-select: none;-->
+<!--        -ms-user-select: none;-->
+<!--        user-select: none;-->
+<!--      }-->
+
+<!--      @media (min-width: 768px) {-->
+<!--        .bd-placeholder-img-lg {-->
+<!--          font-size: 3.5rem;-->
+<!--        }-->
+<!--      }-->
+<!--    </style>-->
+<!--    &lt;!&ndash; Custom styles for this template &ndash;&gt;-->
+<!--    <link href="{% static 'User/home.css' %}" rel="stylesheet">-->
+<!--  </head>-->
+<!--  <body>-->
+<!--<header class="header">-->
+<!--  <div class="container header__container">-->
+<!--<div class="header__logo"><img class="header__img" src="https://image.ibb.co/kcVou6/path3000.png"> <h1 class="header__title">Social Media Integration</span></h1></div>-->
+
+
+
+<!--  <div class="header__menu">-->
+<!--    <nav id="navbar" class="header__nav collapse">-->
+<!--      <ul class="header__elenco">-->
+<!--        <li class="header__el"><a href="{% url 'user-home' %}" class="header__link">Home</a></li>-->
+<!--        <li class="header__el"><a href="{% url 'profile' %}" class="header__link">Profile</a></li>-->
+<!--        <li class="header__el"><a href="{% url 'emailattachment' %}" class="header__link">Gmail</a></li>-->
+<!--                  <li class="header__el"><a href="{% url 'user-facebook' %}" class="header__link">Facebook</a></li>-->
+<!--        <li class="header__el"><a href="{% url 'user-oxford' %}" class="header__link">Oxford</a></li>-->
+<!--         <li class="header__el"><a href="{% url 'user-youtube' %}" class="header__link">Youtube</a></li>-->
+<!--        <li class="header__el"><a href="{% url 'user-instagram' %}" class="header__link">Instagram</a></li>-->
+<!--        <li class="header__el header__el&#45;&#45;blue"><a href="{% url 'user-logout' %}" class="btn btn&#45;&#45;white">Logout →</a></li>-->
+<!--      </ul>-->
+<!--    </nav>-->
+<!--  </div>-->
+<!--    </div>-->
+<!--</header>-->
+
+
+
+<!--  <section class="jumbotron text-center">-->
+<!--    <div class="container">-->
+<!--      <h1 class="jumbotron-heading">Search Instagram</h1>-->
+<!--      <p class="lead text-muted">Get the instagram profile details of the user</p>-->
+<!--      <form method="POST">-->
+<!--      <div class="input-group mb-3">-->
+<!--          {% csrf_token %}-->
+<!--          <input type="text" name="search" class="form-control" aria-label="Username">-->
+<!--      </div>-->
+<!--      <p>-->
+<!--        <button type="submit" name="submit" value="search" class="btn btn-primary my-2">Search</button>-->
+
+<!--      </p>-->
+<!--      </form>-->
+<!--            <div>-->
+<!--        {% for insta in resultlist  %}-->
+<!--        <div>Full Name-{{insta.full_name}}</div>-->
+<!--        <div>Insta Bio-{{insta.biography}}</div>-->
+<!--        <div>Followers-{{insta.followers}}</div>-->
+<!--        <div>Following-{{insta.following}}</div>-->
+<!--        <div>Total Posts-{{insta.totalposts}}</div>-->
+
+
+<!--        {% endfor %}-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+
+<!--</main>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+{% load static %}
+{% load crispy_forms_tags %}
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/x-icon" href="https://image.ibb.co/fOur3b/favicon.png"/>
+ <link rel="stylesheet" type="text/css" href="{% static 'User/home.css' %}">
+<meta name="theme-color" content="#1885ed">
+  <title>Social Media Integration  - Homepage</title>
+</head>
+
+<body>
+<header class="header">
+  <div class="container header__container">
+<div class="header__logo"><img class="header__img" src="https://image.ibb.co/kcVou6/path3000.png"> <h1 class="header__title">Social Media Integration</span></h1></div>
+
+
+
+  <div class="header__menu">
+    <nav id="navbar" class="header__nav collapse">
+      <ul class="header__elenco">
+        <li class="header__el"><a href="{% url 'user-home' %}" class="header__link">Home</a></li>
+        <li class="header__el"><a href="{% url 'profile' %}" class="header__link">Profile</a></li>
+        <li class="header__el"><a href="{% url 'emailattachment' %}" class="header__link">Gmail</a></li>
+
+        <li class="header__el"><a href="{% url 'user-oxford' %}" class="header__link">Oxford</a></li>
+           <li class="header__el"><a href="{% url 'user-youtube' %}" class="header__link">Youtube</a></li>
+          <li class="header__el"><a href="{% url 'user-instagram' %}" class="header__link">Instagram</a></li>
+           <li class="header__el"><a href="{% url 'user-twitter' %}" class="header__link">Twitter</a></li>
+          <li class="header__el"><a href="{% url 'user-auto' %}" class="header__link">Facebook</a></li>
+          <li class="header__el header__el--blue"><a href="{% url 'user-logout' %}" class="btn btn--white">Logout →</a></li>
+      </ul>
+    </nav>
+  </div>
+    </div>
+</header>
+
+<div class="sect sect--padding-top">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+    <div class="site">
+ <h1 class="jumbotron-heading">Search Instagram</h1>
+      <p class="lead text-muted">Get the instagram profile details of the user</p>
+      <form method="POST">
+      <div class="input-group mb-3">
+          {% csrf_token %}
+          <input type="text" name="search" class="form-control" aria-label="Username">
+      </div>
+      <p>
+        <button type="submit" name="submit" value="search" class="btn btn-primary my-2">Search</button>
+
+      </p>
+      </form>
+
+    </div>
+
+    </div>
+    </div>
+  </div>
+</div>
+                    <div class="center">
+        {% for insta in resultlist  %}
+        Full Name-{{insta.full_name}}
+        Insta Bio-{{insta.biography}}
+        Followers-{{insta.followers}}
+        Following-{{insta.following}}
+        Total Posts-{{insta.totalposts}}
+
+
+        {% endfor %}
+      </div>
+
+
+</body>
+
+</html>
